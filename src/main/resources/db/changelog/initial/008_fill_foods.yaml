@@ -1,0 +1,787 @@
+databaseChangeLog:
+  - changeSet:
+      id: 08-insert-foods
+      author: YourName
+      changes:
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 1
+              - column:
+                  name: name
+                  value: Sushi Burritos
+              - column:
+                  name: description
+                  value: A fusion of fresh seafood, rice, and vibrant vegetables rolled into giant sushi burritos.
+              - column:
+                  name: price
+                  value: 14.99
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 1
+              - column:
+                  name: name
+                  value: Moroccan Lamb Tagine
+              - column:
+                  name: description
+                  value: Tender lamb slow-cooked with aromatic spices, dried fruits, and couscous.
+              - column:
+                  name: price
+                  value: 19.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 1
+              - column:
+                  name: name
+                  value: Thai Lamb Tagine
+              - column:
+                  name: description
+                  value: Tender lamb slow-cooked with aromatic spices, dried fruits, and couscous.
+              - column:
+                  name: price
+                  value: 19.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 1
+              - column:
+                  name: name
+                  value: Peppercorn-Crusted Steak
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 1
+              - column:
+                  name: name
+                  value: Chili-Lime Grilled Corn on the Cob
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 1
+              - column:
+                  name: name
+                  value: Tandoori-Style Grilled Salmon
+              - column:
+                  name: description
+                  value:  Salmon fillet marinated in yogurt and Indian spices, grilled to flaky perfection
+              - column:
+                  name: price
+                  value: 25
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 2
+              - column:
+                  name: name
+                  value: Sushi Burritos
+              - column:
+                  name: description
+                  value: A fusion of fresh seafood, rice, and vibrant vegetables rolled into giant sushi burritos.
+              - column:
+                  name: price
+                  value: 14.99
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 2
+              - column:
+                  name: name
+                  value: Moroccan Lamb Tagine
+              - column:
+                  name: description
+                  value: Tender lamb slow-cooked with aromatic spices, dried fruits, and couscous.
+              - column:
+                  name: price
+                  value: 19.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 2
+              - column:
+                  name: name
+                  value: Peppercorn-Crusted Steak
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 2
+              - column:
+                  name: name
+                  value: Chili-Lime Grilled Corn on the Cob
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 3
+              - column:
+                  name: name
+                  value: Tandoori-Style Grilled Salmon
+              - column:
+                  name: description
+                  value: Salmon fillet marinated in yogurt and Indian spices, grilled to flaky perfection
+              - column:
+                  name: price
+                  value: 25
+
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 3
+              - column:
+                  name: name
+                  value: Sushi Burritos
+              - column:
+                  name: description
+                  value: A fusion of fresh seafood, rice, and vibrant vegetables rolled into giant sushi burritos.
+              - column:
+                  name: price
+                  value: 14.99
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 1
+              - column:
+                  name: name
+                  value: Moroccan Lamb Tagine
+              - column:
+                  name: description
+                  value: Tender lamb slow-cooked with aromatic spices, dried fruits, and couscous.
+              - column:
+                  name: price
+                  value: 19.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 3
+              - column:
+                  name: name
+                  value: Peppercorn-Crusted Steak
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 3
+              - column:
+                  name: name
+                  value: Chili-Lime Grilled Corn on the Cob
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 3
+              - column:
+                  name: name
+                  value: Tandoori-Style Grilled Salmon
+              - column:
+                  name: description
+                  value: Salmon fillet marinated in yogurt and Indian spices, grilled to flaky perfection
+              - column:
+                  name: price
+                  value: 25
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 4
+              - column:
+                  name: name
+                  value: Sushi Burritos
+              - column:
+                  name: description
+                  value: A fusion of fresh seafood, rice, and vibrant vegetables rolled into giant sushi burritos.
+              - column:
+                  name: price
+                  value: 14.99
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 4
+              - column:
+                  name: name
+                  value: Moroccan Lamb Tagine
+              - column:
+                  name: description
+                  value: Tender lamb slow-cooked with aromatic spices, dried fruits, and couscous.
+              - column:
+                  name: price
+                  value: 19.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 4
+              - column:
+                  name: name
+                  value: Peppercorn-Crusted Steak
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 4
+              - column:
+                  name: name
+                  value: Chili-Lime Grilled Corn on the Cob
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 4
+              - column:
+                  name: name
+                  value: Tandoori-Style Grilled Salmon
+              - column:
+                  name: description
+                  value: Salmon fillet marinated in yogurt and Indian spices, grilled to flaky perfection
+              - column:
+                  name: price
+                  value: 25
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 5
+              - column:
+                  name: name
+                  value: Sushi Burritos
+              - column:
+                  name: description
+                  value: A fusion of fresh seafood, rice, and vibrant vegetables rolled into giant sushi burritos.
+              - column:
+                  name: price
+                  value: 14.99
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 5
+              - column:
+                  name: name
+                  value: Moroccan Lamb Tagine
+              - column:
+                  name: description
+                  value: Tender lamb slow-cooked with aromatic spices, dried fruits, and couscous.
+              - column:
+                  name: price
+                  value: 19.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 5
+              - column:
+                  name: name
+                  value: Peppercorn-Crusted Steak
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 5
+              - column:
+                  name: name
+                  value: Chili-Lime Grilled Corn on the Cob
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 5
+              - column:
+                  name: name
+                  value: Tandoori-Style Grilled Salmon
+              - column:
+                  name: description
+                  value: Salmon fillet marinated in yogurt and Indian spices, grilled to flaky perfection
+              - column:
+                  name: price
+                  value: 25
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 6
+              - column:
+                  name: name
+                  value: Sushi Burritos
+              - column:
+                  name: description
+                  value: A fusion of fresh seafood, rice, and vibrant vegetables rolled into giant sushi burritos.
+              - column:
+                  name: price
+                  value: 14.99
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 6
+              - column:
+                  name: name
+                  value: Moroccan Lamb Tagine
+              - column:
+                  name: description
+                  value: Tender lamb slow-cooked with aromatic spices, dried fruits, and couscous.
+              - column:
+                  name: price
+                  value: 19.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 6
+              - column:
+                  name: name
+                  value: Peppercorn-Crusted Steak
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 6
+              - column:
+                  name: name
+                  value: Chili-Lime Grilled Corn on the Cob
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 6
+              - column:
+                  name: name
+                  value: Tandoori-Style Grilled Salmon
+              - column:
+                  name: description
+                  value: Salmon fillet marinated in yogurt and Indian spices, grilled to flaky perfection
+              - column:
+                  name: price
+                  value: 25
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 7
+              - column:
+                  name: name
+                  value: Sushi Burritos
+              - column:
+                  name: description
+                  value: A fusion of fresh seafood, rice, and vibrant vegetables rolled into giant sushi burritos.
+              - column:
+                  name: price
+                  value: 14.99
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 7
+              - column:
+                  name: name
+                  value: Moroccan Lamb Tagine
+              - column:
+                  name: description
+                  value: Tender lamb slow-cooked with aromatic spices, dried fruits, and couscous.
+              - column:
+                  name: price
+                  value: 19.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 7
+              - column:
+                  name: name
+                  value: Peppercorn-Crusted Steak
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 7
+              - column:
+                  name: name
+                  value: Chili-Lime Grilled Corn on the Cob
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 7
+              - column:
+                  name: name
+                  value: Tandoori-Style Grilled Salmon
+              - column:
+                  name: description
+                  value: Salmon fillet marinated in yogurt and Indian spices, grilled to flaky perfection
+              - column:
+                  name: price
+                  value: 25
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 8
+              - column:
+                  name: name
+                  value: Sushi Burritos
+              - column:
+                  name: description
+                  value: A fusion of fresh seafood, rice, and vibrant vegetables rolled into giant sushi burritos.
+              - column:
+                  name: price
+                  value: 14.99
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 8
+              - column:
+                  name: name
+                  value: Moroccan Lamb Tagine
+              - column:
+                  name: description
+                  value: Tender lamb slow-cooked with aromatic spices, dried fruits, and couscous.
+              - column:
+                  name: price
+                  value: 19.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 8
+              - column:
+                  name: name
+                  value: Peppercorn-Crusted Steak
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 8
+              - column:
+                  name: name
+                  value: Chili-Lime Grilled Corn on the Cob
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 8
+              - column:
+                  name: name
+                  value: Tandoori-Style Grilled Salmon
+              - column:
+                  name: description
+                  value: Salmon fillet marinated in yogurt and Indian spices, grilled to flaky perfection
+              - column:
+                  name: price
+                  value: 25
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 9
+              - column:
+                  name: name
+                  value: Sushi Burritos
+              - column:
+                  name: description
+                  value: A fusion of fresh seafood, rice, and vibrant vegetables rolled into giant sushi burritos.
+              - column:
+                  name: price
+                  value: 14.99
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 9
+              - column:
+                  name: name
+                  value: Moroccan Lamb Tagine
+              - column:
+                  name: description
+                  value: Tender lamb slow-cooked with aromatic spices, dried fruits, and couscous.
+              - column:
+                  name: price
+                  value: 19.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 9
+              - column:
+                  name: name
+                  value: Peppercorn-Crusted Steak
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 9
+              - column:
+                  name: name
+                  value: Chili-Lime Grilled Corn on the Cob
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 9
+              - column:
+                  name: name
+                  value: Tandoori-Style Grilled Salmon
+              - column:
+                  name: description
+                  value: Salmon fillet marinated in yogurt and Indian spices, grilled to flaky perfection
+              - column:
+                  name: price
+                  value: 10
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 10
+              - column:
+                  name: name
+                  value: Sushi Burritos
+              - column:
+                  name: description
+                  value: A fusion of fresh seafood, rice, and vibrant vegetables rolled into giant sushi burritos.
+              - column:
+                  name: price
+                  value: 14.99
+
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 10
+              - column:
+                  name: name
+                  value: Moroccan Lamb Tagine
+              - column:
+                  name: description
+                  value: Tender lamb slow-cooked with aromatic spices, dried fruits, and couscous.
+              - column:
+                  name: price
+                  value: 19.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 10
+              - column:
+                  name: name
+                  value: Peppercorn-Crusted Steak
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 20.99
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 2
+              - column:
+                  name: name
+                  value: Chili-Lime Grilled Corn on the Cob
+              - column:
+                  name: description
+                  value: Prime steak coated with cracked black pepper and grilled to perfection
+              - column:
+                  name: price
+                  value: 10
+        - insert:
+            tableName: Foods
+            columns:
+              - column:
+                  name: restaurant_id
+                  value: 10
+              - column:
+                  name: name
+                  value: Tandoori-Style Grilled Salmon
+              - column:
+                  name: description
+                  value: Salmon fillet marinated in yogurt and Indian spices, grilled to flaky perfection
+              - column:
+                  name: price
+                  value: 25

@@ -1,0 +1,409 @@
+databaseChangeLog:
+  - changeSet:
+      id: 00-insert-companies
+      author: Sanat
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: FlavorFusion Bistro
+              - column:
+                  name: email
+                  value: flavorfusion@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: SavorySpice Grill
+              - column:
+                  name: email
+                  value: savoryspice@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: RusticElegance Eatery
+              - column:
+                  name: email
+                  value: rusticelegance@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: UrbanGourmet Junction
+              - column:
+                  name: email
+                  value: urbangourmet@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: SeafoodSymphony Cafe
+              - column:
+                  name: email
+                  value: seafoodsymphony@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: FiresideFlavors Tavern
+              - column:
+                  name: email
+                  value: firesideflavors@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: CulinaryCanvas Kitchen
+              - column:
+                  name: email
+                  value: culinarycanvas@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: The HungryHedgehog
+              - column:
+                  name: email
+                  value: hungryhedgehog@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: SpiceRoute Diner
+              - column:
+                  name: email
+                  value: spiceroute@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: FarmToFork Bistro
+              - column:
+                  name: email
+                  value: farmtofork@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: Whisk & Whimsy Cafe
+              - column:
+                  name: email
+                  value: whiskandwhimsy@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: FusionPalate Bistro
+              - column:
+                  name: email
+                  value: fusionpalate@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: TastefulTidbits Deli
+              - column:
+                  name: email
+                  value: tastefultidbits@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: RiversideRendezvous
+              - column:
+                  name: email
+                  value: riverside@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: The Roaming Fork
+              - column:
+                  name: email
+                  value: roamingfork@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 1
+
+  - changeSet:
+      id: 01-insert-buyers
+      author: Sanat
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: Emily Anderson
+              - column:
+                  name: email
+                  value: emily@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 2
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: Benjamin Walker
+              - column:
+                  name: email
+                  value: benjamin@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 2
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: Chloe Mitchell
+              - column:
+                  name: email
+                  value: chloe@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 2
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: Ethan Rodriguez
+              - column:
+                  name: email
+                  value: ethan@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 2
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: Grace Johnson
+              - column:
+                  name: email
+                  value: grace@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 2
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: Daniel Patel
+              - column:
+                  name: email
+                  value: daniel@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 2
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: Sophia Williams
+              - column:
+                  name: email
+                  value: sophia@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 2
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: Liam Martinez
+              - column:
+                  name: email
+                  value: liam@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 2
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: Olivia Thompson
+              - column:
+                  name: email
+                  value: olivia@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 2
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: account_name
+                  value: Noah Wilson
+              - column:
+                  name: email
+                  value: noah@example.com
+              - column:
+                  name: password
+                  value: "$2a$12$WB2YUbFcCN0tm44SBcKUjua9yiFBsfB3vW02IjuwzY7HGtlQIKzy2"
+              - column:
+                  name: role_id
+                  value: 2
+

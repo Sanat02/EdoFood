@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 03-insert-roles-data
+      author: Sanat
+      changes:
+        - sql:
+            sql: INSERT INTO roles (name) VALUES
+              ('Company'),
+              ('Buyer');

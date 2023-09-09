@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 05-create-restaurants-table
+      author: YourName
+      changes:
+        - createTable:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: restaurant_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_restaurant_user
+                    references: users(id)
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: description
+                  type: text
+              - column:
+                  name: address
+                  type: varchar(255)
+              - column:
+                  name: phone_number
+                  type: varchar(20)

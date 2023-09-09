@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: 012-create-comment-table
+      author: Sanat
+      changes:
+        - createTable:
+            tableName: Comment
+            columns:
+              - column:
+                  name: comment_id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: sender_id
+                  type: INT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_comment_sender
+                    references: users(id)
+              - column:
+                  name: food_id
+                  type: INT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_comment_food
+                    references: foods(food_id)
+              - column:
+                  name: time
+                  type: TIMESTAMP

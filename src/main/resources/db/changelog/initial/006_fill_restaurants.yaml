@@ -1,0 +1,304 @@
+databaseChangeLog:
+  - changeSet:
+      id: 02-insert-restaurants
+      author: YourName
+      changes:
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 1
+              - column:
+                  name: name
+                  value: FlavorFusion Bistro
+              - column:
+                  name: description
+                  value: |
+                    Embark on a culinary journey at FlavorFusion Bistro, where we blend global tastes to create a symphony of flavors. Our diverse menu combines the best of international cuisine for a truly unique dining experience.
+              - column:
+                  name: address
+                  value: 123 Maple Street, Apt. 4B, Springfield, IL 62701
+              - column:
+                  name: phone_number
+                  value: "+1234567890"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 2
+              - column:
+                  name: name
+                  value: SavorySpice Grill
+              - column:
+                  name: description
+                  value: |
+                    At SavorySpice Grill, we believe that every dish should be a celebration of flavor. Our expert chefs use an array of spices to craft mouthwatering grilled dishes that will tantalize your taste buds.
+              - column:
+                  name: address
+                  value: 456 Pine Avenue, Suite 203, San Diego, CA 92109
+              - column:
+                  name: phone_number
+                  value: "+9876543210"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 3
+              - column:
+                  name: name
+                  value: RusticElegance Eatery
+              - column:
+                  name: description
+                  value: |
+                    RusticElegance Eatery is where simplicity meets sophistication. Enjoy a cozy dining experience with elegantly prepared dishes that pay homage to traditional recipes, served in a rustic, welcoming atmosphere.
+              - column:
+                  name: address
+                  value: 789 Oak Lane, Brooklyn, NY 11201
+              - column:
+                  name: phone_number
+                  value: "+1112223333"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 4
+              - column:
+                  name: name
+                  value: UrbanGourmet Junction
+              - column:
+                  name: description
+                  value: |
+                    Join us at UrbanGourmet Junction, where the vibrancy of the city meets gourmet dining. Our eclectic menu showcases the finest ingredients and culinary techniques in a bustling urban setting.
+              - column:
+                  name: address
+                  value: 101 Elm Street, Unit 7, Boston, MA 02108
+              - column:
+                  name: phone_number
+                  value: "+4445556666"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 5
+              - column:
+                  name: name
+                  value: SeafoodSymphony Cafe
+              - column:
+                  name: description
+                  value: |
+                    Dive into a seafood extravaganza at SeafoodSymphony Cafe. Our menu is a symphony of flavors from the ocean, featuring fresh catches prepared to perfection in a relaxed, coastal-inspired setting.
+              - column:
+                  name: address
+                  value: 246 Cedar Road, Atlanta, GA 30301
+              - column:
+                  name: phone_number
+                  value: "+5556667777"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 6
+              - column:
+                  name: name
+                  value: FiresideFlavors Tavern
+              - column:
+                  name: description
+                  value: |
+                    Experience the warmth of FiresideFlavors Tavern, where comforting dishes are served in front of a crackling fire. Our menu is a testament to the cozy, hearthside dining experience.
+              - column:
+                  name: address
+                  value: 555 Birch Avenue, Houston, TX 77002
+              - column:
+                  name: phone_number
+                  value: "+6667778888"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 7
+              - column:
+                  name: name
+                  value: CulinaryCanvas Kitchen
+              - column:
+                  name: description
+                  value: |
+                    Explore the artistry of cuisine at CulinaryCanvas Kitchen, where every dish is a masterpiece. Our chefs use food as their canvas to create visually stunning and delectable creations.
+              - column:
+                  name: address
+                  value: 888 Willow Way, Seattle, WA 98101
+              - column:
+                  name: phone_number
+                  value: "+7778889999"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 8
+              - column:
+                  name: name
+                  value: The HungryHedgehog
+              - column:
+                  name: description
+                  value: |
+                    Come satisfy your hunger at The HungryHedgehog, a whimsical eatery known for its hearty portions and friendly atmosphere. We're here to feed your appetite with delicious, satisfying meals.
+              - column:
+                  name: address
+                  value: 222 Redwood Lane, Chicago, IL 60601
+              - column:
+                  name: phone_number
+                  value: "+8889990000"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 9
+              - column:
+                  name: name
+                  value: SpiceRoute Diner
+              - column:
+                  name: description
+                  value: |
+                    Embark on a culinary journey along the Spice Route at our diner. We serve a fusion of flavors inspired by the ancient trade routes, offering a taste of adventure with every bite.
+              - column:
+                  name: address
+                  value: 333 Spruce Street, Denver, CO 80202
+              - column:
+                  name: phone_number
+                  value: "+9990001111"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 10
+              - column:
+                  name: name
+                  value: FarmToFork Bistro
+              - column:
+                  name: description
+                  value: |
+                    At FarmToFork Bistro, we believe in the goodness of fresh, locally sourced ingredients. Our menu celebrates the bounty of the land, bringing you farm-fresh flavors in every dish.
+              - column:
+                  name: address
+                  value: 777 Magnolia Drive, Los Angeles, CA 90001
+              - column:
+                  name: phone_number
+                  value: "+1010101010"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 11
+              - column:
+                  name: name
+                  value: Whisk & Whimsy Cafe
+              - column:
+                  name: description
+                  value: |
+                    Whisk & Whimsy Cafe is where culinary creativity meets playful charm. Join us for imaginative dishes and delightful treats in a whimsical, cozy cafe setting.
+              - column:
+                  name: address
+                  value: 654 Sycamore Court, Miami, FL 33125
+              - column:
+                  name: phone_number
+                  value: "+1111111111"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 12
+              - column:
+                  name: name
+                  value: FusionPalate Bistro
+              - column:
+                  name: description
+                  value: |
+                    FusionPalate Bistro is where flavors collide and create harmonious culinary experiences. Our menu blends diverse cuisines to offer a delightful fusion of tastes.
+              - column:
+                  name: address
+                  value: 111 Chestnut Avenue, Philadelphia, PA 19103
+              - column:
+                  name: phone_number
+                  value: "+1212121212"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 13
+              - column:
+                  name: name
+                  value: TastefulTidbits Deli
+              - column:
+                  name: description
+                  value: |
+                    Satisfy your cravings with TastefulTidbits Deli, where we serve up a delightful array of small bites and savory delights. Perfect for those who appreciate the finer details of taste.
+              - column:
+                  name: address
+                  value: 999 Pinecrest Circle, San Francisco, CA 94101
+              - column:
+                  name: phone_number
+                  value: "+1313131313"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 14
+              - column:
+                  name: name
+                  value: RiversideRendezvous
+              - column:
+                  name: description
+                  value: |
+                    Join us for a memorable RiversideRendezvous, where picturesque views meet delectable cuisine. Our restaurant offers a tranquil setting to enjoy the beauty of the outdoors while savoring delicious dishes.
+              - column:
+                  name: address
+                  value: 432 Birchwood Terrace, Dallas, TX 75201
+              - column:
+                  name: phone_number
+                  value: "+1414141414"
+
+        - insert:
+            tableName: Restaurants
+            columns:
+              - column:
+                  name: user_id
+                  value: 15
+              - column:
+                  name: name
+                  value: The Roaming Fork
+              - column:
+                  name: description
+                  value: |
+                    At The Roaming Fork, we're always on a culinary adventure. Our menu changes with the seasons, ensuring that every visit is a delightful journey of discovery through diverse flavors.
+              - column:
+                  name: address
+                  value: 777 Elmwood Lane, New York, NY 10001
+              - column:
+                  name: phone_number
+                  value: "+1515151515"

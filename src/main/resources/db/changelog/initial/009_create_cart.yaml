@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 09-create-cart-table
+      author: YourName
+      changes:
+        - createTable:
+            tableName: Cart
+            columns:
+              - column:
+                  name: cart_id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: buyer_id
+                  type: INT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_cart_buyer
+                    references: users(id)
+              - column:
+                  name: food_id
+                  type: INT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_cart_food
+                    references: foods(food_id)
+              - column:
+                  name: quantity
+                  type: INT
+              - column:
+                  name: total
+                  type: DECIMAL(10, 2)
