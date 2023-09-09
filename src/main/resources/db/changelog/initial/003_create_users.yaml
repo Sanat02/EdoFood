@@ -24,7 +24,7 @@ databaseChangeLog:
                   type: varchar(255)
               - column:
                   name: role_id
-                  type: long
+                  type: int
                   constraints:
                     nullable: false
                     foreignKeyName: fk_users_role

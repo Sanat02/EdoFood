@@ -24,7 +24,7 @@ databaseChangeLog:
                   type: varchar(255)
               - column:
                   name: description
-                  type: text
+                  type: varchar(355)
               - column:
                   name: address
                   type: varchar(255)
