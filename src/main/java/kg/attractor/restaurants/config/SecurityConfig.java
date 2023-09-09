@@ -15,31 +15,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
-//    private static final String FETCH_USERS_QUERY = """
-//            select email, password, enabled
-//            from user_table
-//            where email = ?;
-//            """;
-//
-//    private static final String FETCH_AUTHORITIES_QUERY = """
-//            select user_email, authority
-//             from roles r,
-//                  authorities a
-//             where user_email = ?
-//             and r.authority_id = a.id;
-//            """;
-//
-//
-//    private final DataSource dataSource;
-//
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.jdbcAuthentication()
-//                .dataSource(dataSource)
-//                .usersByUsernameQuery(FETCH_USERS_QUERY)
-//                .authoritiesByUsernameQuery(FETCH_AUTHORITIES_QUERY)
-//                .passwordEncoder(new BCryptPasswordEncoder());
-//    }
 @Bean
 public PasswordEncoder encoder() {
     return new BCryptPasswordEncoder();
@@ -61,8 +36,8 @@ public PasswordEncoder encoder() {
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                         .permitAll())
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/add").hasRole("ADMIN")
-                        .requestMatchers("/reviews/**").fullyAuthenticated()
+//                        .requestMatchers("/add").hasRole("ADMIN")
+//                        .requestMatchers("/reviews/**").fullyAuthenticated()
                         .anyRequest().permitAll()
                 );
         return http.build();
