@@ -41,4 +41,17 @@ public class RestaurantService {
 
         return restaurantDtos;
     }
+
+    public RestaurantDto getRestaurantByName(String name) {
+
+        Restaurant restaurant = restaurantRepository.findRestaurantByName(name).orElse(null);
+        if (restaurant == null) {
+            return null;
+        }
+        RestaurantDto restaurantDto = RestaurantDto.builder()
+                .id(restaurant.getRestaurantId())
+                .name(restaurant.getName())
+                .build();
+        return restaurantDto;
+    }
 }

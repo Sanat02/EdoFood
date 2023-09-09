@@ -385,19 +385,51 @@
     <h1 class="heading"> our <span> restaurants</span></h1>
 
     <div class="wrap">
-        <div class="search">
-            <input type="text" class="searchTerm" placeholder="What are you looking for?">
-            <button type="submit" class="searchButton">
-                <i class="fa fa-search"></i>
-            </button>
-        </div>
+        <form action="/" method="POST">
+            <#if _csrf??>
+                <input type="hidden" name="${(_csrf.parameterName)!'csrf-param-name'}"
+                       value="${(_csrf.token)!'csrf-token'}"/>
+
+            </#if>
+
+            <div class="search">
+                <input type="text" class="searchTerm" name="searchTerm" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </form>
     </div>
 
+
+    <#if restaurant??>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="https://img.myloview.com/stickers/chef-hat-vector-logo-chef-hat-logo-vector-illustration-restaurant-logo-cooking-logo-700-229284823.jpg"
+                     alt="">
+            </div>
+            <div class="content">
+                <h3>${restaurant.name}</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="price">More info</div>
+            </div>
+        </div>
+    </div>
+</section>
+<#else>
     <div class="box-container">
         <#list restaurants.content as restaurant>
             <div class="box">
                 <div class="image">
-                    <img src="https://img.myloview.com/stickers/chef-hat-vector-logo-chef-hat-logo-vector-illustration-restaurant-logo-cooking-logo-700-229284823.jpg" alt="">
+                    <img src="https://img.myloview.com/stickers/chef-hat-vector-logo-chef-hat-logo-vector-illustration-restaurant-logo-cooking-logo-700-229284823.jpg"
+                         alt="">
                 </div>
                 <div class="content">
                     <h3>${restaurant.name}</h3>
@@ -413,14 +445,44 @@
             </div>
         </#list>
     </div>
+    </section>
+    <#if restaurants.hasPrevious()>
+        <a class="pag" href="/?page=${restaurants.number - 1}">Previous Page</a>
+    </#if>
+    <#if restaurants.hasNext()>
+        <a class="pag" href="/?page=${restaurants.number + 1}">Next Page</a>
+    </#if>
+</#if>
 
-</section>
-<#if restaurants.hasPrevious()>
-    <a class="pag" href="/?page=${restaurants.number - 1}">Previous Page</a>
-</#if>
-<#if restaurants.hasNext()>
-    <a class="pag" href="/?page=${restaurants.number + 1}">Next Page</a>
-</#if>
+
+<#--    <div class="box-container">-->
+<#--        <#list restaurants.content as restaurant>-->
+<#--            <div class="box">-->
+<#--                <div class="image">-->
+<#--                    <img src="https://img.myloview.com/stickers/chef-hat-vector-logo-chef-hat-logo-vector-illustration-restaurant-logo-cooking-logo-700-229284823.jpg" alt="">-->
+<#--                </div>-->
+<#--                <div class="content">-->
+<#--                    <h3>${restaurant.name}</h3>-->
+<#--                    <div class="stars">-->
+<#--                        <i class="fas fa-star"></i>-->
+<#--                        <i class="fas fa-star"></i>-->
+<#--                        <i class="fas fa-star"></i>-->
+<#--                        <i class="fas fa-star"></i>-->
+<#--                        <i class="fas fa-star-half-alt"></i>-->
+<#--                    </div>-->
+<#--                    <div class="price">More info</div>-->
+<#--                </div>-->
+<#--            </div>-->
+<#--        </#list>-->
+<#--    </div>-->
+
+
+<#--<#if restaurants.hasPrevious()>-->
+<#--    <a class="pag" href="/?page=${restaurants.number - 1}">Previous Page</a>-->
+<#--</#if>-->
+<#--<#if restaurants.hasNext()>-->
+<#--    <a class="pag" href="/?page=${restaurants.number + 1}">Next Page</a>-->
+<#--</#if>-->
 
 
 <section class="footer">
