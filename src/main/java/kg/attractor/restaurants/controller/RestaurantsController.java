@@ -38,8 +38,6 @@ public class RestaurantsController {
 
         return "restaurants";
     }
-
-    //name="searchTerm"
     @PostMapping
     @ResponseStatus(HttpStatus.SEE_OTHER)
     public String findJob(

@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface RestaurantRepository extends JpaRepository<Restaurant,Integer> {
     Page<Restaurant> findAll(Pageable pageable);
 
-    Optional<Restaurant> findRestaurantByName(String name);
+    Optional<Restaurant> findByNameIgnoreCase(String name);
 }

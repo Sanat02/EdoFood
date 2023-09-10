@@ -30,6 +30,7 @@
             text-transform: capitalize;
             text-decoration: none;
             transition: .2s linear;
+
         }
 
         html {
@@ -63,6 +64,15 @@
             color: var(--primary-color);
             text-transform: uppercase;
             font-size: 4rem;
+        }
+
+        .j {
+            padding: 1.2rem 0;
+            color:  var(--black);
+            text-transform: uppercase;
+            font-size: 2rem;
+            text-decoration: none;
+            margin-right: 3px;
         }
 
         .heading span {
@@ -159,7 +169,7 @@
         }
 
         .product {
-            margin-top: 60px;
+            margin-top: 80px;
             margin-bottom: 30px;
         }
 
@@ -167,6 +177,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
             gap: 2rem;
+
         }
 
         .product .box-container .box {
@@ -176,6 +187,7 @@
             box-shadow: var(--box-shadow);
             position: relative;
             overflow: hidden;
+            padding-bottom: 12px;
         }
 
         .product .box-container .box .image {
@@ -210,6 +222,7 @@
 
         .product .box-container .box .content .stars {
             padding: 1rem 0;
+            margin-bottom: 30px;
         }
 
         .product .box-container .box .content .stars i {
@@ -229,77 +242,6 @@
         }
 
 
-        .footer {
-            background: var(--bg);
-            text-align: center;
-            margin-top: 150px;
-        }
-
-        .footer .box-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-            gap: 2rem;
-        }
-
-        .footer .box-container .box h3 {
-            font-size: 2.2rem;
-            text-transform: capitalize;
-            color: var(--primary-color);
-            padding: 1rem 0;
-        }
-
-        .footer .box-container .box p {
-            font-size: 1.5rem;
-            line-height: 2;
-            color: var(--black);
-            padding: 1rem 0;
-        }
-
-        .footer .box-container .box .share {
-            margin-top: 1rem;
-        }
-
-        .footer .box-container .box .share a {
-            height: 4.5rem;
-            width: 4.5rem;
-            line-height: 4.5rem;
-            border-radius: 10%;
-            font-size: 1.7rem;
-            background: var(--primary-color);
-            color: var(--white);
-            margin-right: .3rem;
-            text-align: center;
-        }
-
-        .footer .box-container .box .share a:hover {
-            background: var(--secondary);
-        }
-
-        .footer .box-container .box .link {
-            font-size: 1.7rem;
-            line-height: 2;
-            color: var(--primary-color);
-            padding: .5rem 0;
-            display: block;
-        }
-
-        .footer .box-container .box .link:hover {
-            color: var(--secondary);
-        }
-
-        .footer .credit {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 3rem;
-            font-size: 2rem;
-            text-transform: capitalize;
-            color: var(--primary-color);
-            border-top: .1rem solid var(--black);
-        }
-
-        .footer .credit span {
-            color: var(--secondary);
-        }
 
         @media (max-width: 991px) {
 
@@ -354,6 +296,72 @@
                 font-size: 3.5rem;
             }
         }
+
+        .btn {
+            background: transparent;
+            width: 200px;
+            position: relative;
+            padding: 15px;
+            color: #1ECD97;
+            cursor: pointer;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: all 500ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+            border-radius: 4px;
+            font-weight: 600;
+            overflow: hidden;
+            border: 2px solid #1ECD97;
+            text-decoration: none;
+        }
+
+        /* In Progress Button */
+        .btn-progress {
+            width: 500px;
+            color: transparent;
+        }
+
+        .btn-fill:after {
+            content: '';
+            background: #1ECD97;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: 0;
+            display: block;
+            animation: fill 3.2s linear forwards;
+        }
+
+        /* Button Complete */
+        .btn-complete {
+            padding: 10px;
+            width: 50px;
+            color: #fff;
+            pointer-events: none;
+        }
+
+        .btn-complete:after {
+            font-family: FontAwesome;
+            content: "\f00c";
+            color: #fff;
+            height: 100%;
+            padding-left: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1ECD97;
+        }
+        .rp{
+            margin-top: 30px;
+            width: 5px;
+        }
     </style>
 </head>
 <body>
@@ -372,11 +380,11 @@
     </div> -->
 
     <div class="log">
-        <a href="#">
-            <div>Sign in</div>
+        <a class="j" href="#">
+            <div>sign in</div>
         </a>
-        <a href="#">
-            <div>Sign up</div>
+        <a class="j" href="#">
+            <div>sign up</div>
         </a>
     </div>
 </header>
@@ -418,7 +426,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <div class="price">More info</div>
+                <a href="/foods/${restaurant.id}" class='btn'>Learn More</a>
             </div>
         </div>
     </div>
@@ -440,7 +448,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <div class="price">More info</div>
+                    <a href="/foods/${restaurant.id}" class='btn'>Learn More</a>
                 </div>
             </div>
         </#list>
@@ -453,65 +461,6 @@
         <a class="pag" href="/?page=${restaurants.number + 1}">Next Page</a>
     </#if>
 </#if>
-
-
-<#--    <div class="box-container">-->
-<#--        <#list restaurants.content as restaurant>-->
-<#--            <div class="box">-->
-<#--                <div class="image">-->
-<#--                    <img src="https://img.myloview.com/stickers/chef-hat-vector-logo-chef-hat-logo-vector-illustration-restaurant-logo-cooking-logo-700-229284823.jpg" alt="">-->
-<#--                </div>-->
-<#--                <div class="content">-->
-<#--                    <h3>${restaurant.name}</h3>-->
-<#--                    <div class="stars">-->
-<#--                        <i class="fas fa-star"></i>-->
-<#--                        <i class="fas fa-star"></i>-->
-<#--                        <i class="fas fa-star"></i>-->
-<#--                        <i class="fas fa-star"></i>-->
-<#--                        <i class="fas fa-star-half-alt"></i>-->
-<#--                    </div>-->
-<#--                    <div class="price">More info</div>-->
-<#--                </div>-->
-<#--            </div>-->
-<#--        </#list>-->
-<#--    </div>-->
-
-
-<#--<#if restaurants.hasPrevious()>-->
-<#--    <a class="pag" href="/?page=${restaurants.number - 1}">Previous Page</a>-->
-<#--</#if>-->
-<#--<#if restaurants.hasNext()>-->
-<#--    <a class="pag" href="/?page=${restaurants.number + 1}">Next Page</a>-->
-<#--</#if>-->
-
-
-<section class="footer">
-    <div class="box-container">
-        <div class="box">
-            <h3>find us here</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In accusamus praesentium.</p>
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <h3>contact us</h3>
-            <p>+52 2 1478 7412</p>
-            <a href="#" class="link">ninjashub@gmail.com</a>
-        </div>
-
-        <div class="box">
-            <h3>localization</h3>
-            <p>230 points of pines dr <br>
-                colorado springs <br>
-                United States.
-            </p>
-        </div>
-    </div>
-</section>
+<div class="rp"></div>
 </body>
 </html>
