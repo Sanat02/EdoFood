@@ -741,6 +741,7 @@
             font-size: 20px;
         }
 
+
         .j {
             padding: 1.2rem 0;
             color: var(--black);
@@ -749,9 +750,18 @@
             text-decoration: none;
             margin-right: 3px;
         }
-        .fn{
+
+        .j:hover{
+            color: #3bb77e;
+        }
+
+        .fn {
             height: 50px;
             margin-bottom: 5px;
+        }
+
+        .icons {
+            display: flex;
         }
     </style>
 
@@ -763,22 +773,26 @@
 
     <nav class="navbar">
         <a href="/">home</a>
-        <a href="/profile">profile</a>
+        <#if username??><a href="/profile">profile</a></#if>
     </nav>
 
-    <#--    <div class="icons">-->
-    <#--        <div id="cart-btn" class="fas fa-shopping-basket"></div>-->
-    <#--        <div id="login-btn" class="fas fa-user"></div>-->
-    <#--        <div id="menu-btn" class="fas fa-bars"></div>-->
-    <#--    </div>-->
-    <div class="log">
-        <a class="j" href="#">
-            <div>sign in</div>
-        </a>
-        <a class="j" href="#">
-            <div>sign up</div>
-        </a>
-    </div>
+    <#if username??>
+        <div class="icons">
+            <div id="cart-btn" class="fas fa-shopping-basket"></div>
+            <div><a class="j" href="#">
+                    <div>log out</div>
+                </a></div>
+        </div>
+    <#else>
+        <div class="log">
+            <a class="j" href="/login">
+                <div>sign in</div>
+            </a>
+            <a class="j" href="/register">
+                <div>sign up</div>
+            </a>
+        </div>
+    </#if>
 </header>
 
 
@@ -807,7 +821,8 @@
         <#list foods.content as food >
             <div class="box">
                 <div class="image">
-                    <img src="https://s.tmimgcdn.com/scr/800x500/253100/modelo-de-logotipo-de-servico-de-catering-para-todos-os-servicos-de-alimentacao_253135-original.jpg" alt="">
+                    <img src="https://s.tmimgcdn.com/scr/800x500/253100/modelo-de-logotipo-de-servico-de-catering-para-todos-os-servicos-de-alimentacao_253135-original.jpg"
+                         alt="">
                 </div>
                 <div class="content">
                     <h3 class="fn">${food.name}</h3>

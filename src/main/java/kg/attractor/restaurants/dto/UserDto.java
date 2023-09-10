@@ -10,4 +10,5 @@ public class UserDto {
     private String accountName;
     private String email;
     private RoleDto role;
+    private String password;
 }

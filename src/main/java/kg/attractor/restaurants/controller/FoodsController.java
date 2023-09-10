@@ -6,6 +6,8 @@ import kg.attractor.restaurants.service.FoodService;
 import kg.attractor.restaurants.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,11 +27,18 @@ public class FoodsController {
     public String getAllJobResumes(
             @RequestParam(name = "page", defaultValue = "0") int page,
             @PathVariable int restaurantId,
-                    Model model
-            ) {
-        Page<FoodDto> foods =foodService.getFoodsByRestaurantId(restaurantId,page,PAGE_SIZE);
+            Model model
+    ) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println(auth.getName());
+        if (auth.getName().equals("anonymousUser")) {
+            model.addAttribute("username", null);
+        } else {
+            model.addAttribute("username", auth.getName());
+        }
+        Page<FoodDto> foods = foodService.getFoodsByRestaurantId(restaurantId, page, PAGE_SIZE);
         model.addAttribute("foods", foods);
-        model.addAttribute("restaurant",restaurantService.getRestaurantById(restaurantId) );
+        model.addAttribute("restaurant", restaurantService.getRestaurantById(restaurantId));
         return "foods";
     }
 }

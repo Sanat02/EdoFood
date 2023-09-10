@@ -68,7 +68,7 @@
 
         .j {
             padding: 1.2rem 0;
-            color:  var(--black);
+            color: var(--black);
             text-transform: uppercase;
             font-size: 2rem;
             text-decoration: none;
@@ -242,7 +242,6 @@
         }
 
 
-
         @media (max-width: 991px) {
 
             html {
@@ -358,9 +357,13 @@
             align-items: center;
             background: #1ECD97;
         }
-        .rp{
+
+        .rp {
             margin-top: 30px;
             width: 5px;
+        }
+        .icons{
+            display: flex;
         }
     </style>
 </head>
@@ -370,23 +373,24 @@
     <a href="#" class="logo"> <i class="fas fa-shopping-cart"></i> Shop</a>
     <nav class="navbar">
         <a href="#home">home</a>
-        <a href="#about">profile</a>
+        <#if username??><a href="/profile">profile</a></#if>
     </nav>
 
-    <!-- <div class="icons">
-        <div id="cart-btn" class="fas fa-shopping-basket"></div>
-        <div id="login-btn" class="fas fa-user"></div>
-        <div id="menu-btn" class="fas fa-bars"></div>
-    </div> -->
-
-    <div class="log">
-        <a class="j" href="#">
-            <div>sign in</div>
-        </a>
-        <a class="j" href="#">
-            <div>sign up</div>
-        </a>
-    </div>
+    <#if username??>
+        <div class="icons">
+            <div id="cart-btn" class="fas fa-shopping-basket"></div>
+            <div><a class="j" href="#"><div>log out</div></a></div>
+        </div>
+    <#else>
+        <div class="log">
+            <a class="j" href="/login">
+                <div>sign in</div>
+            </a>
+            <a class="j" href="/register">
+                <div>sign up</div>
+            </a>
+        </div>
+    </#if>
 </header>
 <section class="product" id="product">
 
