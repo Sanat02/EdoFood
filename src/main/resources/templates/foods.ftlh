@@ -777,11 +777,10 @@
     </nav>
 
     <#if username??>
-        <div class="icons">
-            <div id="cart-btn" class="fas fa-shopping-basket"></div>
-            <div><a class="j" href="#">
-                    <div>log out</div>
-                </a></div>
+        <div class="log">
+            <a class="j" href="/logout">
+                <div>log out</div>
+            </a>
         </div>
     <#else>
         <div class="log">

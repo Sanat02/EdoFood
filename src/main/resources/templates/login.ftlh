@@ -59,7 +59,7 @@
         }
 
         input[type="submit"] {
-            background-color: greenyellow;
+            background-color:  #3bb77e;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -70,7 +70,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: greenyellow;
+           background-color: #00a86b;
         }
 
         .register-option {
@@ -80,7 +80,7 @@
         }
 
         .register-option a {
-            color: greenyellow;
+            color: #3bb77e;
             text-decoration: none;
         }
 
@@ -167,23 +167,5 @@
     </div>
 </div>
 
-<script>
-    document.getElementById("login-form").addEventListener('submit', onLoginHandler);
-
-    let user = {};
-
-    function onLoginHandler(event) {
-
-        let form = event.target;
-        let userFormData = new FormData(form);
-        user = Object.fromEntries(userFormData);
-        saveUser(user)
-    }
-
-    function saveUser(user) {
-        let userAsJson = JSON.stringify(user)
-        localStorage.setItem('user', userAsJson)
-    }
-</script>
 </body>
 </html>
