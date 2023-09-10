@@ -1,11 +1,14 @@
 package kg.attractor.restaurants.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import kg.attractor.restaurants.dto.FoodDto;
 import kg.attractor.restaurants.dto.RestaurantDto;
 import kg.attractor.restaurants.dto.RoleDto;
 import kg.attractor.restaurants.dto.UserDto;
 import kg.attractor.restaurants.model.Restaurant;
+import kg.attractor.restaurants.model.User;
 import kg.attractor.restaurants.repository.RestaurantRepository;
+import kg.attractor.restaurants.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,6 +19,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class RestaurantService {
     private final RestaurantRepository restaurantRepository;
+    private final UserRepository userRepository;
 
     public Page<RestaurantDto> getAllRestaurants(int start, int end) {
         Pageable pageable = PageRequest.of(start, end);
@@ -85,4 +89,19 @@ public class RestaurantService {
                         .build())
                 .build();
     }
+
+    public void save(RestaurantDto restaurantDto){
+        User user = userRepository.findById(restaurantDto.getUser().getId())
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+
+
+        restaurantRepository.save(Restaurant.builder()
+                .address(restaurantDto.getAddress())
+                .phoneNumber(restaurantDto.getPhoneNumber())
+                .description(restaurantDto.getDescription())
+                .name(restaurantDto.getName())
+                .user(user)
+                .build());
+    }
+
 }

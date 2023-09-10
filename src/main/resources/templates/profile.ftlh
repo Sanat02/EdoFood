@@ -303,6 +303,7 @@
                 margin-left: 0;
             }
         }
+
         .pag {
             margin-top: 20px;
             text-decoration: none;

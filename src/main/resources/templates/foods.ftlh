@@ -751,7 +751,7 @@
             margin-right: 3px;
         }
 
-        .j:hover{
+        .j:hover {
             color: #3bb77e;
         }
 

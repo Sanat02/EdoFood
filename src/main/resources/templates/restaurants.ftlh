@@ -362,7 +362,8 @@
             margin-top: 30px;
             width: 5px;
         }
-        .j:hover{
+
+        .j:hover {
             color: #3bb77e;
         }
     </style>

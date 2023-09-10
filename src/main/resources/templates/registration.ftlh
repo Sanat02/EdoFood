@@ -142,7 +142,6 @@
         <#if _csrf??>
             <input type="hidden" name="${(_csrf.parameterName)!'csrf-param-name'}"
                    value="${(_csrf.token)!'csrf-token'}"/>
-
         </#if>
 
         <label for="account_name">Account Name:</label>
@@ -160,6 +159,20 @@
             <option value="0">Buyer</option>
             <option value="1">Restaurant</option>
         </select>
+
+        <div id="restaurantFields" style="display: none;">
+            <label for="restaurant_name">Restaurant Name:</label>
+            <input type="text" id="restaurant_name" name="restaurant_name" placeholder="Enter restaurant name">
+
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" placeholder="Enter restaurant description">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Enter restaurant address">
+
+            <label for="phone_number">Phone Number:</label>
+            <input type="tel" id="phone_number" name="phone_number" placeholder="Enter phone number">
+        </div>
 
         <input type="submit" value="Register">
     </form>
@@ -182,5 +195,25 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<script>
+
+    const accountTypeSelect = document.getElementById('account_type');
+    const restaurantFields = document.getElementById('restaurantFields');
+    const restaurantInputs = restaurantFields.querySelectorAll('input');
+
+    accountTypeSelect.addEventListener('change', function () {
+        if (accountTypeSelect.value === '1') {
+            restaurantFields.style.display = 'block';
+            restaurantInputs.forEach(input => {
+                input.setAttribute('required', 'required');
+            });
+        } else {
+            restaurantFields.style.display = 'none';
+            restaurantInputs.forEach(input => {
+                input.removeAttribute('required');
+            });
+        }
+    });
+</script>
 </body>
 </html>

@@ -15,8 +15,8 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder encoder;
 
-    public void save(UserDto userDto) {
-        userRepository.save(User.builder()
+    public int save(UserDto userDto) {
+        return userRepository.save(User.builder()
                 .id(userDto.getId())
                 .password(encoder.encode(userDto.getPassword()))
                 .accountName(userDto.getAccountName())
@@ -25,7 +25,8 @@ public class UserService {
                         .name(userDto.getRole().getName())
                         .build())
                 .email(userDto.getEmail())
-                .build());
+                .build()).getId();
+
     }
 
     public UserDto getUserByEmail(String email) {
