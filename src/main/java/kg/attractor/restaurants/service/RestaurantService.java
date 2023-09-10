@@ -1,5 +1,6 @@
 package kg.attractor.restaurants.service;
 
+import kg.attractor.restaurants.dto.FoodDto;
 import kg.attractor.restaurants.dto.RestaurantDto;
 import kg.attractor.restaurants.dto.RoleDto;
 import kg.attractor.restaurants.dto.UserDto;
@@ -54,8 +55,24 @@ public class RestaurantService {
                 .build();
         return restaurantDto;
     }
-    public RestaurantDto getRestaurantById(int id){
-        Restaurant restaurant=restaurantRepository.findById(id).orElse(null);
+
+    public RestaurantDto getRestaurantById(int id) {
+        Restaurant restaurant = restaurantRepository.findById(id).orElse(null);
+        return RestaurantDto.builder()
+                .id(restaurant.getRestaurantId())
+                .address(restaurant.getAddress())
+                .name(restaurant.getName())
+                .phoneNumber(restaurant.getPhoneNumber())
+                .description(restaurant.getDescription())
+                .user(UserDto.builder()
+                        .id(restaurant.getUser().getId())
+                        .accountName(restaurant.getUser().getAccountName())
+                        .build())
+                .build();
+    }
+
+    public RestaurantDto getRestaurantByUserId(int userId) {
+        Restaurant restaurant = restaurantRepository.findRestaurantByUserId(userId);
         return RestaurantDto.builder()
                 .id(restaurant.getRestaurantId())
                 .address(restaurant.getAddress())

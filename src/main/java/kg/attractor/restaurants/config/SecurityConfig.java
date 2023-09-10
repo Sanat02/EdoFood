@@ -15,10 +15,10 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
-@Bean
-public PasswordEncoder encoder() {
-    return new BCryptPasswordEncoder();
-}
+    @Bean
+    public PasswordEncoder encoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -36,8 +36,7 @@ public PasswordEncoder encoder() {
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                         .permitAll())
                 .authorizeHttpRequests(authorize -> authorize
-//                        .requestMatchers("/add").hasRole("ADMIN")
-//                        .requestMatchers("/reviews/**").fullyAuthenticated()
+                        .requestMatchers("/profile").fullyAuthenticated()
                         .anyRequest().permitAll()
                 );
         return http.build();

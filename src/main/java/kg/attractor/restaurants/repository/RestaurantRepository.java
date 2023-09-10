@@ -11,4 +11,6 @@ public interface RestaurantRepository extends JpaRepository<Restaurant,Integer> 
     Page<Restaurant> findAll(Pageable pageable);
 
     Optional<Restaurant> findByNameIgnoreCase(String name);
+
+    Restaurant findRestaurantByUserId(int userId);
 }
