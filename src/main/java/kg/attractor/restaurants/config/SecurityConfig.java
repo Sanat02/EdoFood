@@ -42,6 +42,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/register").permitAll()
                         .requestMatchers("/").permitAll()
+                        .requestMatchers("/cart/add").hasAuthority("Buyer")
                         .requestMatchers("/foods/{restaurantId}").permitAll()
                         .anyRequest().fullyAuthenticated()
                 );

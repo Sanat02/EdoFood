@@ -37,6 +37,10 @@ public class FoodsController {
         if (auth.getName().equals("anonymousUser")) {
             model.addAttribute("username", null);
         } else {
+            UserDto userDto = userService.getUserByEmail(auth.getName());
+            if (userDto.getRole().getId() == 2) {
+                model.addAttribute("buyer", userDto);
+            }
             model.addAttribute("username", auth.getName());
         }
         Page<FoodDto> foods = foodService.getFoodsByRestaurantId(restaurantId, page, PAGE_SIZE);

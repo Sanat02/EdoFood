@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="_csrf" content="${_csrf.token}">
+    <meta name="_csrf_header" content="${_csrf.headerName}">
     <title>Complete Responsive Grocery Store Website</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
@@ -817,18 +819,20 @@
 <section class="product" id="product">
     <div class="box-container">
         <#list foods.content as food >
-            <div class="box">
-                <div class="image">
-                    <img src="https://s.tmimgcdn.com/scr/800x500/253100/modelo-de-logotipo-de-servico-de-catering-para-todos-os-servicos-de-alimentacao_253135-original.jpg"
-                         alt="">
-                </div>
-                <div class="content">
-                    <h3 class="fn">${food.name}</h3>
-                    <div class="price">${food.price}</div>
-                    <div><i class="fas fa-shopping-cart"></i></div>
-                </div>
+        <div class="box">
+            <div class="image">
+                <img src="https://s.tmimgcdn.com/scr/800x500/253100/modelo-de-logotipo-de-servico-de-catering-para-todos-os-servicos-de-alimentacao_253135-original.jpg"
+                     alt="">
             </div>
-        </#list>
+            <div class="content">
+                <h3 class="fn">${food.name}</h3>
+                <div class="price">$${food.price}</div>
+                <#if buyer?? >
+                <div class="add-btn" data-user-id="${buyer.id}" data-food-id="${food.id}"><i
+                        class="fas fa-shopping-cart"></i></div></#if>
+        </div>
+    </div>
+    </#list>
     </div>
 </section>
 <#if foods.hasPrevious()>
@@ -902,7 +906,53 @@
     <div class="credit">created by <span> ninjashub </span> all rights reserved!</div>
 
 </section>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const addButtons = document.querySelectorAll(".add-btn");
+        const csrfToken = document.querySelector('meta[name="_csrf"]').getAttribute('content');
 
+        addButtons.forEach(function (button) {
+            button.addEventListener("click", function (event) {
+                const foodId = button.getAttribute("data-food-id");
+                const userId = button.getAttribute("data-user-id");
+
+                console.log("Food ID clicked:", foodId);
+
+                if (confirm('Are you sure you want to add to cart?')) {
+
+                    const data = {
+                        foodId: foodId,
+                        userId: userId
+                    };
+
+
+                    fetch('/cart/add', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': csrfToken
+
+                        },
+                        body: JSON.stringify(data)
+                    })
+                        .then(response => {
+                            if (response.ok) {
+
+                                alert('Item added to cart successfully!');
+                            } else {
+                                alert('Failed to add item to cart.');
+                            }
+                        })
+                        .catch(error => {
+
+                            console.error('Error:', error);
+                        });
+                }
+            });
+        });
+    });
+
+</script>
 
 </body>
 </html>
