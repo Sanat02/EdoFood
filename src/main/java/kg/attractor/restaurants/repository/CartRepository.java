@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 
 public interface CartRepository extends JpaRepository<Cart,Integer> {
     Boolean existsCartByFoodFoodIdAndUserId(int foodId,int buyerId);
+    Boolean existsCartByCartIdAndUserId(int cartId,int userId);
 
     Cart findCartByFoodFoodIdAndUserId(int foodId,int buyerId);
 

@@ -3,6 +3,7 @@ package kg.attractor.restaurants.controller;
 import kg.attractor.restaurants.dto.FoodDto;
 import kg.attractor.restaurants.dto.RestaurantDto;
 import kg.attractor.restaurants.dto.UserDto;
+import kg.attractor.restaurants.service.CartService;
 import kg.attractor.restaurants.service.FoodService;
 import kg.attractor.restaurants.service.RestaurantService;
 import kg.attractor.restaurants.service.UserService;
@@ -24,6 +25,7 @@ public class FoodsController {
     private final FoodService foodService;
     private final RestaurantService restaurantService;
     private final UserService userService;
+    private final CartService cartService;
     private static final int PAGE_SIZE = 5;
 
     @GetMapping("/{restaurantId}")
@@ -82,6 +84,18 @@ public class FoodsController {
         RestaurantDto restaurant = restaurantService.getRestaurantByUserId(userDto.getId());
         if (foodService.isExists(foodId, restaurant.getId())) {
             foodService.delete(foodId);
+            return "redirect:/profile";
+        } else {
+            return "prohibited";
+        }
+    }
+
+    @GetMapping("/deleteCart/{cartId}")
+    public String deleteCart(@PathVariable int cartId) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        UserDto userDto = userService.getUserByEmail(auth.getName());
+        if (cartService.existsByUserIdAndCarId(userDto.getId(), cartId)) {
+            cartService.delete(cartId);
             return "redirect:/profile";
         } else {
             return "prohibited";

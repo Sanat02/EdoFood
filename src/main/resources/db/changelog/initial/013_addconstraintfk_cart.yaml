@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: drop  fk_cart_food
+      author: Sanat
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: cart
+            constraintName: fk_cart_food
+  - changeSet:
+      id: add fk_resumes_user
+      author: Sanat
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: cart
+            baseColumnNames: food_id
+            constraintName: fk_cart_food
+            referencedTableName: foods
+            referencedColumnNames: food_id
+            onDelete: cascade
+            onUpdate: cascade

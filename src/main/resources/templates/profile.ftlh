@@ -424,7 +424,7 @@
                     <td>${cart.quantity}</td>
                     <td>$${cart.total}</td>
                     <td>
-                        <a href="/cart/delete/${cart.foodId}">
+                        <a href="/foods/deleteCart/${cart.cartId}">
                             <button class="delete-button">Delete</button>
                         </a>
                     </td>

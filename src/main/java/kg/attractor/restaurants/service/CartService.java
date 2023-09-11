@@ -58,4 +58,11 @@ public class CartService {
         });
         return cartDtos;
     }
+
+    public void delete(int cartId){
+        cartRepository.deleteById(cartId);
+    }
+    public Boolean existsByUserIdAndCarId(int userId,int cartId){
+        return cartRepository.existsCartByCartIdAndUserId(cartId,userId);
+    }
 }
