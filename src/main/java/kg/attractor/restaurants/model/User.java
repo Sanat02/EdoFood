@@ -41,9 +41,7 @@ public class User implements UserDetails {
 
     @OneToMany(fetch= FetchType.LAZY,mappedBy = "user")
     private List<Rating> ratings;
-
-    @OneToMany(fetch= FetchType.LAZY,mappedBy = "sender")
-    private List<Comment> comment;
+    
 
 
     @Override

@@ -61,7 +61,7 @@ public class FoodService {
     }
 
     public boolean isExists(int foodId, int restaurantId) {
-        return foodRepository.existsFoodByFoodIdAndRestaurantRestaurantId(foodId,restaurantId);
+        return foodRepository.existsFoodByFoodIdAndRestaurantRestaurantId(foodId, restaurantId);
     }
 
 }

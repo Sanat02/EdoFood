@@ -54,7 +54,7 @@ public class RegistrationController {
                     .id(2)
                     .name("Company")
                     .build());
-            int userId=userService.save(userDto);
+            int userId = userService.save(userDto);
             userDto.setId(userId);
             RestaurantDto restaurantDto = RestaurantDto.builder()
                     .address(address)

@@ -90,7 +90,7 @@ public class RestaurantService {
                 .build();
     }
 
-    public void save(RestaurantDto restaurantDto){
+    public void save(RestaurantDto restaurantDto) {
         User user = userRepository.findById(restaurantDto.getUser().getId())
                 .orElseThrow(() -> new EntityNotFoundException("User not found"));
 
@@ -103,7 +103,6 @@ public class RestaurantService {
                 .user(user)
                 .build());
     }
-
 
 
 }

@@ -20,12 +20,12 @@ databaseChangeLog:
                     foreignKeyName: fk_comment_sender
                     references: users(id)
               - column:
-                  name: food_id
+                  name: restaurant_id
                   type: INT
                   constraints:
                     nullable: false
-                    foreignKeyName: fk_comment_food
-                    references: foods(food_id)
+                    foreignKeyName: fk_comment_restaurant
+                    references: restaurants(restaurant_id)
               - column:
                   name: time
                   type: TIMESTAMP

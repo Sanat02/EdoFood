@@ -32,4 +32,6 @@ public class Restaurant {
 
     @OneToMany(fetch= FetchType.LAZY,mappedBy = "restaurant")
     private List<Rating> ratings;
+
+
 }

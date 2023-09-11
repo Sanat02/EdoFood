@@ -445,7 +445,9 @@
             </tr>
             </thead>
             <tbody>
+            <#assign totalAmount = 0>
             <#list carts.content as cart >
+                <#assign totalAmount = totalAmount + cart.total>
                 <tr>
                     <td>${cart.cartId}</td>
                     <td>${cart.foodId}</td>
@@ -468,6 +470,7 @@
                     </td>
                 </tr>
             </#list>
+            <div>Total Amount: $${totalAmount}</div>
             </tbody>
         </table>
 

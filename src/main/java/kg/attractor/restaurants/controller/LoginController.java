@@ -1,7 +1,6 @@
 package kg.attractor.restaurants.controller;
 
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +15,6 @@ public class LoginController {
     public String login() {
         return "login";
     }
-
-
 
 
 }

@@ -385,9 +385,6 @@
             transition: .4s linear;
         }
 
-        /* end */
-
-        /* about */
 
         .about .row {
             display: flex;
@@ -430,9 +427,6 @@
             height: 100%;
         }
 
-        /* end */
-
-        /* review */
 
         .review .slide {
             padding: 1.5rem;
@@ -548,132 +542,6 @@
             padding: 1rem 0;
         }
 
-        .contact .row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .contact .row .image {
-            flex: 1 1 30rem;
-        }
-
-        .contact .row .image img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .contact .row form {
-            flex: 1 1 50rem;
-            padding: 5rem;
-            padding-top: 10rem;
-        }
-
-        .contact .row form .inputBox {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .contact .row form .inputBox input,
-        .contact .row form textarea {
-            padding: 1rem;
-            margin: 1rem 0;
-            font-size: 1.7rem;
-            color: #666;
-            text-transform: capitalize;
-            border: .1rem solid transparent;
-            background: var(--bg);
-            border-bottom-color: var(--primary-color);
-            border-radius: .5rem .5rem 0 0;
-            width: 49%;
-        }
-
-        .contact .row form .inputBox input:focus,
-        .contact .row form textarea:focus {
-            border-top-color: var(--primary-color);
-            border-right-color: var(--primary-color);
-            border-left-color: var(--primary-color);
-        }
-
-        .contact .row form textarea {
-            width: 100%;
-            resize: none;
-            height: 15rem;
-        }
-
-        .footer {
-            background: var(--bg);
-            text-align: center;
-        }
-
-        .footer .box-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-            gap: 2rem;
-        }
-
-        .footer .box-container .box h3 {
-            font-size: 2.2rem;
-            text-transform: capitalize;
-            color: var(--primary-color);
-            padding: 1rem 0;
-        }
-
-        .footer .box-container .box p {
-            font-size: 1.5rem;
-            line-height: 2;
-            color: var(--black);
-            padding: 1rem 0;
-        }
-
-        .footer .box-container .box .share {
-            margin-top: 1rem;
-        }
-
-        .footer .box-container .box .share a {
-            height: 4.5rem;
-            width: 4.5rem;
-            line-height: 4.5rem;
-            border-radius: 10%;
-            font-size: 1.7rem;
-            background: var(--primary-color);
-            color: var(--white);
-            margin-right: .3rem;
-            text-align: center;
-        }
-
-        .footer .box-container .box .share a:hover {
-            background: var(--secondary);
-        }
-
-        .footer .box-container .box .link {
-            font-size: 1.7rem;
-            line-height: 2;
-            color: var(--primary-color);
-            padding: .5rem 0;
-            display: block;
-        }
-
-        .footer .box-container .box .link:hover {
-            color: var(--secondary);
-        }
-
-        .footer .credit {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 3rem;
-            font-size: 2rem;
-            text-transform: capitalize;
-            color: var(--primary-color);
-            border-top: .1rem solid var(--black);
-        }
-
-        .footer .credit span {
-            color: var(--secondary);
-        }
-
 
         @media (max-width: 991px) {
 
@@ -764,6 +632,10 @@
         .icons {
             display: flex;
         }
+        .rp {
+            margin-top: 30px;
+            width: 5px;
+        }
     </style>
 
 </head>
@@ -841,71 +713,8 @@
 <#if foods.hasNext()>
     <a class="pag" href="/foods/${restaurant.id}?page=${foods.number + 1}">Next Page</a>
 </#if>
+<div class="rp"></div>
 
-
-<section class="contact" id="contact">
-
-    <h1 class="heading"> add <span> comment </span></h1>
-
-
-    <div class="row">
-
-        <div class="image">
-            <img src="images/contact.png" alt="">
-        </div>
-
-        <form action="">
-            <div class="comment-container">
-                <div class="comment">
-                    <span class="username">User123:</span>
-                    <span class="timestamp">2 hours ago</span>
-                    <div class="text">This is a beautiful comment section!</div>
-                </div>
-                <div class="comment">
-                    <span class="username">CoolGuy42:</span>
-                    <span class="timestamp">1 hour ago</span>
-                    <div class="text">I agree, it looks great!</div>
-                </div>
-            </div>
-            <textarea placeholder="comment" id="" cols="30" rows="10"></textarea>
-            <input type="submit" value="send" class="btn">
-        </form>
-    </div>
-
-</section>
-
-<section class="footer">
-    <div class="box-container">
-        <div class="box">
-            <h3>find us here</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In accusamus praesentium.</p>
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <h3>contact us</h3>
-            <p>+52 2 1478 7412</p>
-            <a href="#" class="link">ninjashub@gmail.com</a>
-        </div>
-
-        <div class="box">
-            <h3>localization</h3>
-            <p>230 points of pines dr <br>
-                colorado springs <br>
-                United States.
-            </p>
-        </div>
-
-    </div>
-
-    <div class="credit">created by <span> ninjashub </span> all rights reserved!</div>
-
-</section>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const addButtons = document.querySelectorAll(".add-btn");
@@ -945,7 +754,8 @@
                 }
             });
         });
-    });
+    })
+
 
 </script>
 </body>

@@ -29,7 +29,7 @@ public class FoodsController {
     private static final int PAGE_SIZE = 5;
 
     @GetMapping("/{restaurantId}")
-    public String getAllJobResumes(
+    public String getAllFoods(
             @RequestParam(name = "page", defaultValue = "0") int page,
             @PathVariable int restaurantId,
             Model model
