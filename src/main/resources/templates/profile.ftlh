@@ -356,8 +356,8 @@
                  alt="Profile Picture">
         </div>
         <div class="profile-info">
-            <h2>Account name:${buyer.accountName}</h2>
-            <p>Email:${buyer.email}</p>
+            <h2>${buyer.accountName}</h2>
+            <p>${buyer.email}</p>
         </div>
         <a href="#">
             <button class="set-image-button">Set Image</button>
@@ -385,7 +385,9 @@
                     <td>${food.description}</td>
                     <td>$${food.price}</td>
                     <td>
-                        <a href="/foods/delete/${food.id}"><button class="delete-button">Delete</button></a>
+                        <a href="/foods/delete/${food.id}">
+                            <button class="delete-button">Delete</button>
+                        </a>
                     </td>
                 </tr>
             </#list>
@@ -400,6 +402,46 @@
     <#if foods.hasNext()>
         <a class="pag" href="/profile?page=${foods.number + 1}">Next Page</a>
     </#if>
+<#else>
+
+    <div class="table-container">
+
+        <table>
+            <thead>
+            <tr>
+                <th>CART ID</th>
+                <th>FOOD ID</th>
+                <th>QUANTITY</th>
+                <th>TOTAL PRICE</th>
+                <th>ACTION</th>
+            </tr>
+            </thead>
+            <tbody>
+            <#list carts.content as cart >
+                <tr>
+                    <td>${cart.cartId}</td>
+                    <td>${cart.foodId}</td>
+                    <td>${cart.quantity}</td>
+                    <td>$${cart.total}</td>
+                    <td>
+                        <a href="/cart/delete/${cart.foodId}">
+                            <button class="delete-button">Delete</button>
+                        </a>
+                    </td>
+                </tr>
+            </#list>
+            </tbody>
+        </table>
+
+        <a href="/" class="add-food-button">Add Cart</a>
+    </div>
+    <#if carts.hasPrevious()>
+        <a class="pag" href="/profile?page=${carts.number - 1}">Previous Page</a>
+    </#if>
+    <#if carts.hasNext()>
+        <a class="pag" href="/profile?page=${carts.number + 1}">Next Page</a>
+    </#if>
+
 </#if>
 </body>
 </html>

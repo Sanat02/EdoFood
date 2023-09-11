@@ -819,20 +819,20 @@
 <section class="product" id="product">
     <div class="box-container">
         <#list foods.content as food >
-        <div class="box">
-            <div class="image">
-                <img src="https://s.tmimgcdn.com/scr/800x500/253100/modelo-de-logotipo-de-servico-de-catering-para-todos-os-servicos-de-alimentacao_253135-original.jpg"
-                     alt="">
+            <div class="box">
+                <div class="image">
+                    <img src="https://s.tmimgcdn.com/scr/800x500/253100/modelo-de-logotipo-de-servico-de-catering-para-todos-os-servicos-de-alimentacao_253135-original.jpg"
+                         alt="">
+                </div>
+                <div class="content">
+                    <h3 class="fn">${food.name}</h3>
+                    <div class="price">$${food.price}</div>
+                    <#if buyer?? >
+                    <div class="add-btn" data-user-id="${buyer.id}" data-food-id="${food.id}"><i
+                                class="fas fa-shopping-cart"></i></div></#if>
+                </div>
             </div>
-            <div class="content">
-                <h3 class="fn">${food.name}</h3>
-                <div class="price">$${food.price}</div>
-                <#if buyer?? >
-                <div class="add-btn" data-user-id="${buyer.id}" data-food-id="${food.id}"><i
-                        class="fas fa-shopping-cart"></i></div></#if>
-        </div>
-    </div>
-    </#list>
+        </#list>
     </div>
 </section>
 <#if foods.hasPrevious()>
@@ -919,32 +919,27 @@
                 console.log("Food ID clicked:", foodId);
 
                 if (confirm('Are you sure you want to add to cart?')) {
-
                     const data = {
                         foodId: foodId,
                         userId: userId
                     };
-
 
                     fetch('/cart/add', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'X-CSRF-TOKEN': csrfToken
-
                         },
                         body: JSON.stringify(data)
                     })
                         .then(response => {
                             if (response.ok) {
-
                                 alert('Item added to cart successfully!');
                             } else {
                                 alert('Failed to add item to cart.');
                             }
                         })
                         .catch(error => {
-
                             console.error('Error:', error);
                         });
                 }
@@ -953,6 +948,5 @@
     });
 
 </script>
-
 </body>
 </html>

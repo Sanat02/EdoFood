@@ -7,6 +7,9 @@ import kg.attractor.restaurants.repository.CartRepository;
 import kg.attractor.restaurants.repository.FoodRepository;
 import kg.attractor.restaurants.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -29,14 +32,30 @@ public class CartService {
     }
 
     public boolean isExists(int buyerId, int foodId) {
-        return cartRepository.existsCartByFoodFoodIdAndUserId( foodId,buyerId);
+        return cartRepository.existsCartByFoodFoodIdAndUserId(foodId, buyerId);
     }
-    public void updateQuantityAndPrice(CartDto cartDto){
-        Cart existedCart=cartRepository.findCartByFoodFoodIdAndUserId(cartDto.getFoodId(),cartDto.getUserId());
-        int quantity=existedCart.getQuantity()+1;
-        BigDecimal qty=new BigDecimal(quantity);
-        BigDecimal foodPrice=existedCart.getFood().getPrice();
-        BigDecimal totalPrice=foodPrice.multiply(qty);
-        cartRepository.updatePriceAndQuantity(existedCart.getCartId(),totalPrice,quantity);
+
+    public void updateQuantityAndPrice(CartDto cartDto) {
+        Cart existedCart = cartRepository.findCartByFoodFoodIdAndUserId(cartDto.getFoodId(), cartDto.getUserId());
+        int quantity = existedCart.getQuantity() + 1;
+        BigDecimal qty = new BigDecimal(quantity);
+        BigDecimal foodPrice = existedCart.getFood().getPrice();
+        BigDecimal totalPrice = foodPrice.multiply(qty);
+        cartRepository.updatePriceAndQuantity(existedCart.getCartId(), totalPrice, quantity);
+    }
+
+    public Page<CartDto> getCartsByBuyerId(int buyerId, int start, int end) {
+        Pageable pageable = PageRequest.of(start, end);
+        Page<Cart> carts = cartRepository.findCartsByUserId(buyerId, pageable);
+        Page<CartDto> cartDtos = carts.map(e -> {
+            return CartDto.builder()
+                    .cartId(e.getCartId())
+                    .userId(e.getUser().getId())
+                    .foodId(e.getFood().getFoodId())
+                    .quantity(e.getQuantity())
+                    .total(e.getTotal())
+                    .build();
+        });
+        return cartDtos;
     }
 }
