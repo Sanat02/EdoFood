@@ -100,7 +100,6 @@
             box-shadow: var(--box-shadow);
         }
 
-        /* header */
 
         .header {
             position: fixed;

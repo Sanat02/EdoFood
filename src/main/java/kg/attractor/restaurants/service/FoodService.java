@@ -4,6 +4,7 @@ import kg.attractor.restaurants.dto.FoodDto;
 import kg.attractor.restaurants.dto.RestaurantDto;
 import kg.attractor.restaurants.dto.UserDto;
 import kg.attractor.restaurants.model.Food;
+import kg.attractor.restaurants.model.Restaurant;
 import kg.attractor.restaurants.repository.FoodRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -43,5 +44,24 @@ public class FoodService {
         });
         return foodDtos;
     }
-    
+
+    public void save(FoodDto foodDto) {
+        foodRepository.save(Food.builder()
+                .restaurant(Restaurant.builder()
+                        .restaurantId(foodDto.getRestaurantDto().getId())
+                        .build())
+                .name(foodDto.getName())
+                .description(foodDto.getDescription())
+                .price(foodDto.getPrice())
+                .build());
+    }
+
+    public void delete(int foodId) {
+        foodRepository.deleteById(foodId);
+    }
+
+    public boolean isExists(int foodId, int restaurantId) {
+        return foodRepository.existsFoodByFoodIdAndRestaurantRestaurantId(foodId,restaurantId);
+    }
+
 }

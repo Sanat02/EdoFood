@@ -19,7 +19,7 @@ public class RestaurantsController {
     private static final int PAGE_SIZE = 10;
 
     @GetMapping()
-    public String getAllJobResumes(
+    public String getAllRestaurants(
             @RequestParam(name = "page", defaultValue = "0") int page,
             @RequestParam(name = "searchTerm", defaultValue = "null") String searchTerm,
             Model model

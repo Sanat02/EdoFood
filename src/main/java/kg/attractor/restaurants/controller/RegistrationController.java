@@ -26,7 +26,7 @@ public class RegistrationController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.SEE_OTHER)
-    public String addResume(
+    public String register(
             @RequestParam(name = "account_name") String accountName,
             @RequestParam(name = "email") String email,
             @RequestParam(name = "password") String password,

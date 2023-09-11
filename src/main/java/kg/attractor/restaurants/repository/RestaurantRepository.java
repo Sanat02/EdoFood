@@ -13,4 +13,6 @@ public interface RestaurantRepository extends JpaRepository<Restaurant,Integer> 
     Optional<Restaurant> findByNameIgnoreCase(String name);
 
     Restaurant findRestaurantByUserId(int userId);
+
+
 }

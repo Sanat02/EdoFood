@@ -334,7 +334,7 @@
             animation: fill 3.2s linear forwards;
         }
 
-        /* Button Complete */
+
         .btn-complete {
             padding: 10px;
             width: 50px;

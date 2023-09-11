@@ -385,15 +385,14 @@
                     <td>${food.description}</td>
                     <td>$${food.price}</td>
                     <td>
-                        <button class="delete-button">Delete</button>
-                        <button class="set-image-button">Set Image</button>
+                        <a href="/foods/delete/${food.id}"><button class="delete-button">Delete</button></a>
                     </td>
                 </tr>
             </#list>
             </tbody>
         </table>
 
-        <a href="#" class="add-food-button">Add Food</a>
+        <a href="/foods/add" class="add-food-button">Add Food</a>
     </div>
     <#if foods.hasPrevious()>
         <a class="pag" href="/profile?page=${foods.number - 1}">Previous Page</a>

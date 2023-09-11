@@ -34,7 +34,7 @@ public class ProfileController {
         UserDto userDto = userService.getUserByEmail(auth.getName());
         if (userDto.getRole().getId() == 1) {
             model.addAttribute("company", userDto);
-            RestaurantDto restaurant = restaurantService.getRestaurantByUserId(userDto.getId());//here I should catch
+            RestaurantDto restaurant = restaurantService.getRestaurantByUserId(userDto.getId());
             if (restaurant==null){
                 return "no restaurant";
             }
