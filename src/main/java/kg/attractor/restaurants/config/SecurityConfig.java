@@ -42,7 +42,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/register").permitAll()
                         .requestMatchers("/").permitAll()
+                        .requestMatchers("/foods/add").hasAuthority("Company")
+                        .requestMatchers("foods/delete/{foodId}").hasAuthority("Company")
+                        .requestMatchers("foods/deleteCart/{cartId}").hasAuthority("Buyer")
                         .requestMatchers("/cart/add").hasAuthority("Buyer")
+                        .requestMatchers("/profile/updateQty/{cartId}").hasAuthority("Buyer")
                         .requestMatchers("/foods/{restaurantId}").permitAll()
                         .anyRequest().fullyAuthenticated()
                 );

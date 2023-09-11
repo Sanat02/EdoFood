@@ -59,10 +59,17 @@ public class CartService {
         return cartDtos;
     }
 
-    public void delete(int cartId){
+    public void delete(int cartId) {
         cartRepository.deleteById(cartId);
     }
-    public Boolean existsByUserIdAndCarId(int userId,int cartId){
-        return cartRepository.existsCartByCartIdAndUserId(cartId,userId);
+
+    public Boolean existsByUserIdAndCarId(int userId, int cartId) {
+        return cartRepository.existsCartByCartIdAndUserId(cartId, userId);
+    }
+
+    public void updateCartQty(int cartId, int quantity) {
+        Cart cart = cartRepository.findById(cartId).orElse(null);
+        BigDecimal price = cart.getFood().getPrice();
+        cartRepository.updatePriceAndQuantity(cartId, price.multiply(new BigDecimal(quantity)), quantity);
     }
 }

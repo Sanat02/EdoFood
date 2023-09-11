@@ -315,6 +315,32 @@
             margin-bottom: 300px;
             margin-left: 350px;
         }
+
+        #quantity {
+            width: 50px;
+            padding: 6px;
+            font-size: 16px;
+            text-align: center;
+            border: none;
+            background-color: #fff;
+            box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
+            margin-left: 4px;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            background-color: var(--secondary);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #facd7f;
+        }
     </style>
 </head>
 <body>
@@ -376,6 +402,7 @@
                 <th>Description</th>
                 <th>Price</th>
                 <th>Action</th>
+
             </tr>
             </thead>
             <tbody>
@@ -414,6 +441,7 @@
                 <th>QUANTITY</th>
                 <th>TOTAL PRICE</th>
                 <th>ACTION</th>
+                <th>CHANGE QUANTITY</th>
             </tr>
             </thead>
             <tbody>
@@ -423,10 +451,20 @@
                     <td>${cart.foodId}</td>
                     <td>${cart.quantity}</td>
                     <td>$${cart.total}</td>
-                    <td>
+                    <td >
                         <a href="/foods/deleteCart/${cart.cartId}">
                             <button class="delete-button">Delete</button>
                         </a>
+                    </td>
+                    <td>
+                        <form action="/profile/updateQty/${cart.cartId}" method="post">
+                            <#if _csrf??>
+                                <input type="hidden" name="${(_csrf.parameterName)!'csrf-param-name'}"
+                                       value="${(_csrf.token)!'csrf-token'}"/>
+                            </#if>
+                            <input type="number" id="quantity" name="quantity" min="1" max="30" value="1">
+                            <button class="delete-button" type="submit">Update</button>
+                        </form>
                     </td>
                 </tr>
             </#list>
